@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto&family=Rubik&display=swap');
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Assets/Montserrat-Thin.woff2') format('woff2'), 
+         url('Assets/Montserrat-Thin.woff') format('woff'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    min-height:100vh;
+    background: #131313;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    overflow:hidden;
+}
+
+.text {
+    color:#ffdbe7;
+    font-family: 'Roboto', sans-serif;
+    font-weight:100;
+    font-size:20px;
+    line-height:25px;
+    opacity:1;
+    width:85vw;
+}
+
+.gamerequest-text {
+    justify-content: center;
+    text-align: center;
+}
+
+.text2 {
+    color:#ffdbe7;
+    font-family: 'Roboto', sans-serif;
+    font-weight:100;
+    font-size:20px;
+    line-height:25px;
+    opacity:1;
+    width:15vw;
+    text-align: center;
+}
+
+input[type=text] {
+    background-color: rgb(72, 72, 72);
+    padding: 15px 15px;
+    border-radius: 15px;
+    color: white;
+    border-color: transparent;
+    font-family: 'Roboto', sans-serif;
+}
+input[type=url] {
+    background-color: rgb(72, 72, 72);
+    padding: 15px 15px;
+    border-radius: 15px;
+    color: white;
+    border-color: transparent;
+    font-family: 'Roboto', sans-serif;
+}
+.main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 60rem; /* Increase the max-width to make the card wider */
+    height: 600px; /* Increase the height to make the card taller */
+    width: 90%; /* Adjust the width as needed */
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    text-align: center; /* Center the text horizontally */
+    overflow: hidden;
+    transition: 0.6s;
+    animation: boxShadowRotate 5s linear 0s infinite, borderRotate 5s linear 0s infinite;
+}
+
+.submitButton {
+    position: relative;
+    background-color: rgb(54,54,54);
+    border-radius: 0.5em;
+    font-size: 16px;
+    color: white;
+    padding: 1em 3.5em;
+    cursor:pointer;
+    user-select:none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    border: none;
+}
+
+.submitButton:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px white;
+  }
+
+  .submitButton:active:after {
+    box-shadow: 0 0 0 0 white;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top:0;
+    opacity: 1;
+    transition: 0s;
+}
+
+.submitButton:active {
+    top: 1px;
+}
+
+.submitButton:hover {
+    background-color: #3A3A3A
+}
+
+/* Style for the Back button */
+.back-button {
+    background-color: black; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Rounded corners */
+    position: fixed; /* Fixed position for top right corner */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    text-decoration: none; /* Remove underlines from the link */
+    font-weight: bold; /* Bold text */
+    font-family: 'Montserrat';
+}
+/* Style for the input container */
+.input-container {
+    display: block; /* Change from inline-block to block */
+    position: relative;
+    margin-bottom: 20px; /* Add margin to create spacing between input and button */
+}
+
+/* Style for the input */
+.input-container input[type="text"],
+.input-container .dropdown-content {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgb(72, 72, 72);
+    color: white;
+    border: 1px solid transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+/* Style for the dropdown content */
+.input-container .dropdown-content {
+    display: none;
+    position: absolute;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid rgb(72, 72, 72);
+    background-color: rgb(72, 72, 72);
+    color: white;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Style for each dropdown option */
+.input-container .dropdown-option {
+    padding: 15px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+/* Style for the dropdown content when shown */
+.input-container .show {
+    display: block;
+}
+
+input[type="text"] {
+    background-color: rgb(72, 72, 72);
+    padding: 15px 15px;
+    border-radius: 15px;
+    color: white;
+    border-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    width: auto; /* Allow the width to adjust based on content */
+    text-align: center; /* Center the text horizontally */
+}
+
+/* Style for the submit button */
+#submit-button {
+    background-color: rgb(54, 54, 54);
+    border-radius: 0.5em;
+    font-size: 16px;
+    color: white;
+    padding: 1em 3.5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+    border: none;
+    display: block; /* Change from inline to block */
+    margin-top: 20px; /* Add margin to create spacing between input and button */
+}
+
+
+@media all and (max-width: 675px) and (min-width: 280px) {
+    .wrapper {
+      display: inline-block;
+      overflow-wrap: break-word;
+    }
+}  
+
+.rainbow {
+    animation: colorRotate 5s linear 0s infinite;
+  }
+
+@keyframes colorRotate {
+    from {
+      color: #6666ff;
+    }
+    10% {
+      color: #0099ff;
+    }
+    50% {
+      color: #00ff00;
+    }
+    75% {
+      color: #ff3399;
+    }
+    100% {
+      color: #6666ff;
+    }
+  }
+
+  @keyframes boxShadowRotate {
+    0% {
+        box-shadow: 0px 0px 100px rgba(250, 88, 242, 0.15);
+    }
+    25% {
+        box-shadow: 0px 0px 100px rgba(0, 153, 255, 0.15);
+    }
+    50% {
+        box-shadow: 0px 0px 100px rgba(0, 255, 0, 0.15);
+    }
+    75% {
+        box-shadow: 0px 0px 100px rgba(255, 51, 153, 0.15);
+    }
+    100% {
+        box-shadow: 0px 0px 100px rgba(250, 88, 242, 0.15);
+    }
+}
+
+@keyframes borderRotate {
+    0% {
+        border: 2px solid rgb(250, 88, 128);
+    }
+    25% {
+        border: 2px solid rgb(0, 153, 255);
+    }
+    50% {
+        border: 2px solid rgb(0, 255, 0);
+    }
+    75% {
+        border: 2px solid rgb(255, 51, 153);
+    }
+    100% {
+        border: 2px solid rgb(250, 88, 128);
+    }
+}
+
